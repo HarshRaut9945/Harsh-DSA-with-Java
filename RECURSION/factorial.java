@@ -14,5 +14,5 @@ public class factorial {
         int n=6;
         System.out.println(Fact(n));
         
-    }
+        }
 }
