@@ -10,6 +10,5 @@ public class MaxArr {
     public static void main(String[] args) {
         int arr[]={2,3,9,1,7,64,5,4};
     System.out.println(maxarr(arr, 0));   
-
     }
 }

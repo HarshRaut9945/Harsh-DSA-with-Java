@@ -28,5 +28,6 @@ public class powerN {
     public static void main(String[] args) {
         System.out.println(Power(2, 5));
         System.out.println(OptimisedWay(2, 5));
+        
     }
 }
