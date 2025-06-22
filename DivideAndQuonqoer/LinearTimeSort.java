@@ -1,3 +1,4 @@
+// Given an array ,where all is elements are sorted in increasing order except two swaping elment ,sort a linear time Asuume there are no duplicate elemnet in the array 
 public class LinearTimeSort {
  static void linearsort(int[] num){
     // Sorting logic goes here
