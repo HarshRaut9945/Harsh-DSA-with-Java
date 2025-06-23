@@ -10,7 +10,7 @@ public class Bsearch {
                 return  mid;
 
             }
-            if(arr[mid]>target){
+            if(target<arr[mid]){
                  end=mid-1;
             }else{
                st=mid+1;
@@ -20,7 +20,7 @@ public class Bsearch {
     }
     public static void main(String[] args) {
         int arr[]={3,4,6,7,9,10,14,15};
-        int target=10;
+        int target=15;
       System.out.print(binarySearch(arr, target));  
     }
 }
