@@ -41,7 +41,7 @@ public class RotateSorted {
 
     public static void main(String[] args) {
         int arr[] = {0, 0, 0, 1, 1, 2, 0, 0, 0};
-        int target = 2;
+        int target = 21;
         System.out.println(duplicate(arr, target)); // Output: true
     }
 }
