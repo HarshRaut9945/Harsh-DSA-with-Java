@@ -18,7 +18,7 @@ public class Delete_From_Lastnth {
        }
     
 
-         public static void DeletenthNode2(Node head,int n){
+         public static Node DeletenthNode2(Node head,int n){
             
              Node  slow=head;
             Node  fast=head;
@@ -30,7 +30,7 @@ public class Delete_From_Lastnth {
              
             if(fast==null){
                 head=head.next;
-                return;
+                return head;
             }
             while(fast.next!=null){
                 fast=fast.next;
@@ -38,6 +38,7 @@ public class Delete_From_Lastnth {
             }
               slow.next=slow.next.next ;
              
+              return head;
 
          }
   
@@ -56,7 +57,7 @@ public class Delete_From_Lastnth {
 
         display(a);
   
-         DeletenthNode2(a, 1);
+       a=  DeletenthNode2(a, 6);
 
          display(a);
         
