@@ -1,10 +1,9 @@
 public class Middile_Of_Linkedlist {
-    static class ListNode {
+     static class ListNode {
         int val;
         ListNode next;
 
-        ListNode() {
-        }
+        ListNode() {}
 
         ListNode(int val) {
             this.val = val;
@@ -16,30 +15,53 @@ public class Middile_Of_Linkedlist {
         }
     }
 
-    public static ListNode middleNode(ListNode head) {
+    
+    public static ListNode deleteMiddle(ListNode head) {
+        if (head == null || head.next == null) {
+            return null; // Only one node, return null
+        }
+
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast != null && fast.next != null) {
+        // When fast reaches end, slow is before the middle
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
-        return slow;
+        // Delete the middle node by skipping it
+        if (slow.next != null) {
+            slow.next = slow.next.next;
+        }
+
+        return head;
     }
 
-    // Test the method
+    public static void display(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-        // Creating linked list: 1 -> 2 -> 3 -> 4 -> 5
+        // Creating list: 1 -> 2 -> 3 -> 4 -> 5
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        // head.next.next.next.next.next = new ListNode(6); // Uncomment to test even
-        // case
+     
 
-        ListNode mid = middleNode(head);
-        System.out.println("Middle node value: " + mid.val);
+        System.out.println("Before deleting middle:");
+        display(head);
+
+        head = deleteMiddle(head);
+
+        System.out.println("After deleting middle:");
+        display(head);
     }
 }
