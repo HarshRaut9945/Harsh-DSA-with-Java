@@ -15,9 +15,7 @@ public class Reverse {
           Stack <Integer> hr=new Stack <>();
 
           while(st.size()>0){
-            int x=st.peek();
-                hr.push(x);
-                st.pop();
+             hr.push(st.pop());
           }
 
           System.out.println(hr);
