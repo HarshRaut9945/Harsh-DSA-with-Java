@@ -1,28 +1,28 @@
-import java.util.Arrays;
 import java.util.Stack;
+import java.util.Arrays;
 
 public class Next_Greatest {
 
-   public static int[] nextGreatest(int[] arr) {
+    public static int[] nextGreatest(int[] arr) {
         int n = arr.length;
         int[] res = new int[n];
         Stack<Integer> st = new Stack<>();
 
-        // Traverse from right to left
-        for (int i = n - 1; i >= 0; i--) {
-            // Pop all elements smaller or equal to arr[i]
+        // Step 1: Handle the last element directly
+        res[n - 1] = -1;
+        st.push(arr[n - 1]);
+
+        // Step 2: Loop from second last to first
+        for (int i = n - 2; i >= 0; i--) {
+            // Pop smaller or equal elements
             while (!st.isEmpty() && st.peek() <= arr[i]) {
                 st.pop();
             }
 
-            // If stack is empty, no greater element
-            if (st.isEmpty()) {
-                res[i] = -1;
-            } else {
-                res[i] = st.peek();
-            }
+            // Assign result
+            res[i] = st.isEmpty() ? -1 : st.peek();
 
-            // Push current element to stack
+            // Push current element for future use
             st.push(arr[i]);
         }
 
@@ -36,6 +36,4 @@ public class Next_Greatest {
         System.out.println("Next Greater Elements:");
         System.out.println(Arrays.toString(result));
     }
-
-
 }

@@ -44,8 +44,18 @@ public class LL_implement_Stack {
             return data;
         }
 
+void diplsyrec(Node h){
+    if(h==null ) return ;
+    diplsyrec(h.next);
+    System.out.print(h.val + " ");
+}
+void display(){
+       diplsyrec(head);
+       System.out.println();
+}
+
         // Display all elements in the stack from top to bottom
-        void display() {
+        void displayRev() {
             Node temp = head;
             System.out.print("Stack: ");
             while (temp != null) {
