@@ -9,6 +9,7 @@ public class FibonaicSeries {
         int prevprev = Fseries(n - 2);
         // Self Work
         return prev + prevprev;
+        // return Fseries(n-1) +  Fseries(n-2)  you can also do this 
 
     }
 
