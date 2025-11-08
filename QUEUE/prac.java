@@ -48,7 +48,7 @@ public class prac {
                 throw new Exception("queue is empty");
             }
             return arr[f];
-
+            
         }
 
         public void Display(){
